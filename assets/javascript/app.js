@@ -45,6 +45,7 @@ $(document).on("click", "#start", run);
 
   // run function starts the game logic
   function run() {
+    $("#greeting-area").html("<h2 id='instructions'>Click on the Best Answer!</h2>");
     
   }
   // replace #greeting with new, <h2> element instructing player to click on their answer of choice
@@ -58,5 +59,5 @@ $(document).on("click", "#start", run);
   //    activate and display a fresh countdown timer
   //    display question and multiple answer choices
 
-  correctAnswerValue = holochron[0].correctAnswer;
-  console.log (correctAnswerValue);
+  // correctAnswerValue = holochron[0].correctAnswer;
+  // console.log (correctAnswerValue);
