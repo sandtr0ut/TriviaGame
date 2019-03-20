@@ -13,7 +13,9 @@
   </head>
 
   <body>
-
+    <div id="greeting-area">
+      <h1 id="greeting">Welcome Force-Sensitive!</h1>
+    </div>
     <div id="show-number"></div>
 
     <br>
@@ -30,6 +32,8 @@
     //  Interval Demonstration
     //  Set our number counter to 100.
     var number = 100;
+    var greetingLine = "$('#greeting-area').html('<h2 id="instructions">" +  greeting + "</h2>'");
+var greeting = "";
 
     //  Variable that will hold our interval ID when we execute
     //  the "run" function
@@ -48,6 +52,8 @@
     function run() {
       clearInterval(intervalId);
       intervalId = setInterval(decrement, 1000);
+      greeting = balls;
+      greetingLine;
     }
 
     //  The decrement function.
