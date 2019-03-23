@@ -23,7 +23,7 @@ Javascript | Game Logic
 
  * Correct answers and background details are displayed after each question.
  
- * Game will advance to the next question automatically.
+ * Game will advance to the next question automatically!
  
  <br>
  
