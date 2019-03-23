@@ -76,9 +76,10 @@ var holochron = [{
 //global variables
 var currentIndex = 0; // start on first question
 // var currentQuest = holochron[currentIndex]; // current question
-var qTime = 30; // 30 seconds per question
+var qTime = 2; // 30 seconds per question
 var intervalID; // placeholder for timer interval
-var answeredCorrectly = 0; //scoreboard value
+var answeredCorrectly = 0; //scoreboard +value
+var answeredWrong = 0; //scoreboard -value
 var answerRevealed = "The correct answer is " + holochron[currentIndex].correctAnswerName;
 var addInfo = holochron[currentIndex].answerDetail;
 
@@ -89,7 +90,7 @@ console.log(holochron[1].question);
 
 // runGame function starts the game logic
 function runGame() {
-  
+
   // var currentQuest = holochron[currentIndex];
   console.log(currentIndex);
 
@@ -146,8 +147,11 @@ function runGame() {
   //append the entire list to the game area
   $("#game-area").append(answerList);
 
+  //...and clear the answer area
+  $("#answer-area").html("<div>");
+
   //activate timer
-  qTime = 30;
+  qTime = 2;
   runTimer();
 
 }
@@ -165,24 +169,25 @@ function questionReview() {
   var answerChoice = $(this).text();
   var correctChoice = holochron[currentIndex].correctAnswerName;
   var showAnsDetail = holochron[currentIndex].answerDetail;
-  
+
 
   //if player answers correctly with time left...
-      //...give them an attaboy
-          //... and increment correct answers
+  //...give them an attaboy
+  //... and increment correct answers
   if ((answerChoice === correctChoice) && (qTime !== 0)) {
     $("#greeting-area").html("<h2 id='Yinstructions'>Well Done!</h2>");
-    answeredCorrectly++
-  } 
-  else {
+    answeredCorrectly++;
+  } else if (qTime !== 0) {
     // otherwise, tell em they are wrong
     $("#greeting-area").html("<h2 id='Ninstructions'>XXX INCORRECT XXX</h2>");
+    answeredWrong++;
+  } else {
+    $("#greeting-area").html("<h2 id='Ninstructions'>XXX TIME EXPIRED! XXX</h2>");
   }
-
 
   // regardless, reveal the correct answer...
   $("#answer-area").html("<h2 id='revealed'></h2><br>");
-  var answerRevealed = "The correct answer is " + correctChoice;
+  var answerRevealed = "The correct answer was " + correctChoice;
   $("#revealed").append(answerRevealed);
 
   // ...and provide a little color-commentary
@@ -195,7 +200,7 @@ function questionReview() {
   //start the transition timer
   //  gives player 5 seconds to read the answer/commentary...
   //  ...then calls runGame to load the next question
-  setTimeout(runGame, 1000 * 5);
+  setTimeout(runGame, 1000 * 1);
 
 
   console.log(answerChoice);
@@ -204,13 +209,6 @@ function questionReview() {
   console.log(addInfo);
 
 }
-
-
-
-
-
-
-
 
 // timer function to set interval and and call decrement for the clock
 function runTimer() {
@@ -245,10 +243,68 @@ function stopTimer() {
 
 function incrementIndex() {
   currentIndex++;
-  }
+}
 
 function gameOver() {
-  alert("Game Over");
+
+  // create new div for game-over page
+  $(".container").replaceAll("<div id='game-over'>");
+
+  //create subdiv for game over message and append msg
+  $("#game-over").html("<div id='gmOvr-message'>");
+  $("#gmOvr-message").append("<h1>Game Over</h1>");
+
+  // append a sub-div for the scoreboard
+  $("#game-over").append("<div id='scoreboard'>");
+
+  // display number of correct answers
+  var correctStr = "";
+  correctStr = "<h2>" + "Correct Answers: " + answeredCorrectly + "</h2>" + "<br>";
+  $("#scoreboard").append(correctStr);
+
+  //display number of incorrect answers
+  var incorrectStr = "";
+  incorrectStr = "<h2>" + "Incorrect Answers: " + answeredWrong + "</h2>" + "<br>";
+  $("#scoreboard").append(incorrectStr);
+
+  //display number of unanswered questions
+  var unAnswered = holochron.length - (answeredCorrectly + answeredWrong);
+  var unAnsweredStr = "";
+  unAnsweredStr = "<h2>" + "Not Answered: " + unAnswered + "</h2>" + "<br>";
+  $("#scoreboard").append(unAnsweredStr);
+
+  //display percentage score and skill-level earned
+  var percentRight = (answeredCorrectly / holochron.length) * 100;
+  var scoreStr = "";
+  scoreStr = "<h2>" + "Your Score: " + percentRight + "&#37" + "</h2>" + "<br>";
+  $("#scoreboard").append(scoreStr);
+
+
+
+  //determines skill level based on percentage correct
+  var skillLevel;
+  $(function () {
+    if (percentRight = 100) {
+      skillLevel = "Jedi Master";
+    } else if ((percentRight < 100) && (percentRight > 79)) {
+      skillLevel = "Jedi Knight";
+    } else if ((percentRight < 80) && (percentRight > 49)) {
+      skillLevel = "Padawan";
+    } else {
+      skillLevel = "Peasant";
+    }
+    var skillStr = "";
+    skillStr = "<h2>" + "Your Level Is:" + "</h2>" + "<br>"
+    $("#scoreboard").append(skillStr);
+
+
+    var skillLevelStr = "";
+    skillLevelStr = "<h1>" + skillLevel + "</h1>"
+    $("#scoreboard").append(skillLevelStr);
+  });
+
+
+  // alert("Game Over");
 }
 
 // append a new <h3> element id="answer-detail" to the gameArea div

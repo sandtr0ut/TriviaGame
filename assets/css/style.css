@@ -13,6 +13,7 @@ body {
   flex-flow: column nowrap;
   align-items: center;
   justify-content: flex-start;
+  color: whitesmoke;
 }
 .container {
   min-width: 680px;
@@ -33,6 +34,20 @@ p {
   font-size: 22px;
 }
 
+#timer-area {
+  min-height: 80px;
+  color: #000;
+}
+#greeting-area {
+  color: #000;
+}
+#game-area {
+  color: #000;
+}
+#answer-area {
+  color: #000;
+}
+
 #start {
   margin-left: auto;
   margin-right: auto;
@@ -47,10 +62,19 @@ p {
   box-shadow: 5px 3px 10px gray;
 }
 
+/* Dynamically-Created */
 #Ninstructions {
   color: red;
 }
 
 #Ninstructions {
   color: black;
+}
+
+#game-over {
+  color: whitesmoke;
+}
+
+h2 {
+  padding: 15px;
 }
