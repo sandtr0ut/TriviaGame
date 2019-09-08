@@ -76,7 +76,7 @@ var holochron = [{
 //global variables
 var currentIndex = 0; // start on first question
 // var currentQuest = holochron[currentIndex]; // current question
-var qTime = 2; // 30 seconds per question
+var qTime = 20; // 20 seconds per question
 var intervalID; // placeholder for timer interval
 var answeredCorrectly = 0; //scoreboard +value
 var answeredWrong = 0; //scoreboard -value
