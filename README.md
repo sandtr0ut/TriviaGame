@@ -1,6 +1,5 @@
-#### Homework #5
 # Trivia Game
-### Star Wars (Expanded Universe) Edition v91.7
+### Star Wars (Expanded Universe) Edition
 
 <br>
 
@@ -27,6 +26,6 @@ Javascript | Game Logic
  
  <br>
  
- #### Backlink References:
- https://sandtr0ut.github.io/Responsive-Portfolio/portfolio.html
+ #### View on portfolio site:
+ https://fordcrosby.com
 
