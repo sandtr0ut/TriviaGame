@@ -26,6 +26,9 @@ Javascript | Game Logic
  
  <br>
  
+ #### Link to Deployed App:
+ https://sandtr0ut.github.io/TriviaGame/
+ 
  #### View on portfolio site:
  https://fordcrosby.com
 
