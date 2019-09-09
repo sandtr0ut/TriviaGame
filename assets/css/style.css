@@ -1,80 +1,96 @@
-
 body {
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  background-image: url("../images/spaceBkgrnd.jpg");
-  background-position: left top;
-  background-repeat: repeat;
-  background-size: auto;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-image: url("../images/spaceBkgrnd.jpg");
+    background-position: left top;
+    background-repeat: repeat;
+    background-size: auto;
 }
 
 .wrapper {
-  width: 100%;
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  justify-content: flex-start;
-  color: whitesmoke;
-}
-.container {
-  min-width: 680px;
-  max-width: 960px;
-  min-height: 800px;
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  justify-content: flex-start;
-  background-color: whitesmoke;
-}
-div {
-  margin: 20px;
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    color: whitesmoke;
 }
 
-li,
-p {
-  font-size: 22px;
+.container {
+    min-width: 680px;
+    max-width: 960px;
+    min-height: 400px;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: rgba(185, 175, 224, 0.712);
+    border-radius: 5%;
+}
+
+div {
+    margin: 20px;
+}
+
+li, p {
+    font-size: 22px;
+}
+
+h1 {
+    font-size: 40px;
+    text-align: center;
 }
 
 #timer-area {
-  min-height: 80px;
-  color: #000;
-}
-#greeting-area {
-  color: #000;
-}
-#game-area {
-  color: #000;
-}
-#answer-area {
-  color: #000;
+    min-height: 80px;
+    color: #000;
 }
 
-#start {
-  margin-left: auto;
-  margin-right: auto;
+#greeting-area {
+    color: #000;
+    margin: 0 20px;
 }
+
 #game-area {
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  justify-content: flex-start;
-  background-color: lightslategrey;
-  padding: 30px;
-  box-shadow: 5px 3px 10px gray;
+    color: #000;
+}
+
+#start, .submit {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    font-size: 33px;
+    border-radius: 5%;
+}
+
+#game-area {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: transparent;
+    /* padding: 30px; */
+    /* box-shadow: 5px 3px 10px gray; */
 }
 
 /* Dynamically-Created */
+
 #Ninstructions {
-  color: red;
+    color: red;
 }
 
 #Ninstructions {
-  color: black;
+    color: black;
 }
 
 #game-over {
-  color: whitesmoke;
+    color: whitesmoke;
 }
 
 h2 {
-  padding: 15px;
+    padding: 15px;
+}
+
+#gmOver-message {
+    margin: 20 auto;
+    text-align: center;
 }

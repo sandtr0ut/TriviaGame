@@ -2,46 +2,40 @@
 <html lang="en">
 
 <head>
-  <!-- administrative items and adjustments for player's mobile-viewing pleasure (playing on the can) -->
-  <title>Trivia Game: Star Wars Expanded Universe Edition</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="assets/css/style.css">
+    <!-- administrative items and adjustments for player's mobile-viewing pleasure (playing on the can) -->
+    <title>Trivia Game: Star Wars Expanded Universe Edition</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/style.css">
 
 </head>
 
 <body>
-<div class="wrapper">
-  <header>
-    
-  </header>
-  <main class="container">
-    
-    <!-- create empty div for the countdown timer -->
-    <div id=timer-area></div>
-    
-    <!-- gameArea will hold message/instructions and the start button -->
-    <div id="greeting-area">
-      <h1 id="greeting">Welcome Force-Sensitive!</h1>
+    <div class="wrapper">
+        <header>
+
+        </header>
+        <main class="container">
+
+            <div id=timer-area></div>
+
+            <div id="greeting-area">
+                <h1 id="greeting">Welcome Force-Sensitive!</h1>
+            </div>
+
+            <!-- Placeholder for messages/instructions and the start button -->
+            <div id="game-area">
+                <h3 id="messaging">Press start to begin the trials.</h3>
+                <button type="submit" class="submit" id="start">START</button>
+            </div>
+
+            <div id="answer-area"></div>
+
+        </main>
     </div>
-    
-    <div id="game-area">
-      <h3 id="messaging">Press start to begin the trials.</h3>
-      <button type="submit" id="start">START</button>
-    </div>
-    
-    <div id="answer-area"></div>
 
-  </main>
-</div>
-
-
-<!-- ***End markup, Begin linking to game logic -->
-  <!-- jQuery -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-  <!-- javascript file -->
-  <script type="text/javascript" src="assets/javascript/app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
 </body>
 
 </html>
