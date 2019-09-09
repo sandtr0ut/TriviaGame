@@ -18,7 +18,7 @@ Javascript | Game Logic
 
  * Click on the best choice to submit your answer.
  
- * You have 30 seconds to answer each question.
+ * You have 20 seconds to answer each question.
 
  * Correct answers and background details are displayed after each question.
  
